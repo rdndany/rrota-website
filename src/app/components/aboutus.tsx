@@ -45,7 +45,7 @@ const AboutUs = () => {
                 generation of crypto enthusiasts.
               </p>
               <p>
-                Built on Solana's high-performance infrastructure,{" "}
+                Built on Solana&apos;s high-performance infrastructure,{" "}
                 <span className="text-[#20befa]">RROTA</span> is designed to
                 provide speed, scalability, and low transaction costs without
                 compromising security. We believe in creating a transparent and
@@ -121,7 +121,8 @@ const AboutUs = () => {
 
               <p className="text-[#20befa] font-medium">
                 Join us as we shape the future of decentralized finance on
-                Solana. Together, we'll push the boundaries of what's possible.
+                Solana. Together, we&apos;ll push the boundaries of what&apos;s
+                possible.
               </p>
               <div className="flex gap-5 pt-2 flex-wrap">
                 <a

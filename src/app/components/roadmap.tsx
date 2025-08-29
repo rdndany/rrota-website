@@ -98,13 +98,13 @@ const Roadmap = () => {
         >
           <div className="bg-gradient-to-br from-[#1a1d23] to-[#202329] border border-[#2b3139] rounded-2xl p-8">
             <p className="text-gray-300 leading-relaxed mb-4">
-              RROTA's roadmap is built to guide the project from meme momentum
-              to long-term utility. Each phase introduces powerful tools to
-              empower holders: Spin-to-Win games incentivize on-chain activity
-              and volume, while the Transit App brings $RTA into real-world
-              payment use, enabling users to pay for transportation with crypto.
-              This fusion of fun and function helps RROTA stand out in the
-              Solana ecosystem.
+              RROTA&apos;s roadmap is built to guide the project from meme
+              momentum to long-term utility. Each phase introduces powerful
+              tools to empower holders: Spin-to-Win games incentivize on-chain
+              activity and volume, while the Transit App brings $RTA into
+              real-world payment use, enabling users to pay for transportation
+              with crypto. This fusion of fun and function helps RROTA stand out
+              in the Solana ecosystem.
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
               The next stages of growth include NFT staking, GameFi experiences,
@@ -115,18 +115,18 @@ const Roadmap = () => {
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
               With strong tokenomics, aggressive burn mechanics, and
-              community-led marketing, RROTA is not just a meme — it's an
+              community-led marketing, RROTA is not just a meme — it&apos;s an
               evolving decentralized utility token. Each phase is carefully
               crafted to scale adoption, enhance liquidity, and grow user
               participation.
             </p>
             <p className="text-gray-300 leading-relaxed">
               As we progress through our roadmap, RROTA remains committed to
-              aligning with Solana's scalable, fast, and eco-friendly blockchain
-              infrastructure. Whether you're a holder, a gamer, a referral
-              sharer, or a builder, RROTA is designed to reward active
-              participation, foster innovation, and expand our impact across
-              borders.
+              aligning with Solana&apos;s scalable, fast, and eco-friendly
+              blockchain infrastructure. Whether you&apos;re a holder, a gamer,
+              a referral sharer, or a builder, RROTA is designed to reward
+              active participation, foster innovation, and expand our impact
+              across borders.
             </p>
           </div>
         </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { getTokenData } from "../lib/token-data";
+import { getTokenData, type TokenDataResponse } from "../lib/token-data";
 import {
   PieChart,
   Pie,
@@ -11,8 +11,15 @@ import {
   Tooltip,
 } from "recharts";
 
+interface PieChartData {
+  name: string;
+  value: number;
+  amount: string;
+  color: string;
+}
+
 const Tokenomics = () => {
-  const [tokenData, setTokenData] = useState<any>(null);
+  const [tokenData, setTokenData] = useState<TokenDataResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -22,7 +29,7 @@ const Tokenomics = () => {
   const TOKEN_ADDRESS = "3yeWYPG3BvGBFrwjar9e28GBYZgYmHT79d7FBVS6xL1a";
 
   // Pie chart data for token distribution
-  const pieChartData = [
+  const pieChartData: PieChartData[] = [
     {
       name: "Liquidity (Locked)",
       value: 60,
@@ -47,7 +54,19 @@ const Tokenomics = () => {
     { name: "Advisors", value: 2, amount: "348,927,476", color: "#F59E0B" },
   ];
 
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({
+    active,
+    payload,
+  }: {
+    active?: boolean;
+    payload?: {
+      payload: {
+        name: string;
+        value: number;
+        amount: string;
+      };
+    }[];
+  }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
@@ -175,8 +194,8 @@ const Tokenomics = () => {
               incentives.
             </p>
             <p className="text-[#aaa] text-lg leading-relaxed mb-6">
-              RROTA's utility is driven by its real-world applications — from
-              gamified platforms like Spin-to-Win and the Crypto Shooter to
+              RROTA&apos;s utility is driven by its real-world applications —
+              from gamified platforms like Spin-to-Win and the Crypto Shooter to
               Solana-powered transportation payments. The tokenomics are fully
               transparent, audited, and updated as the ecosystem expands. Our
               mission is to create a self-sustaining, deflationary token economy
@@ -334,7 +353,7 @@ const Tokenomics = () => {
                   <Legend
                     verticalAlign="bottom"
                     height={36}
-                    formatter={(value, entry: any) => (
+                    formatter={(value, entry: { color?: string }) => (
                       <span style={{ color: entry.color, fontSize: "12px" }}>
                         {value}
                       </span>

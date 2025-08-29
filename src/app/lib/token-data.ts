@@ -83,7 +83,7 @@ interface TokenData {
   holders: number;
 }
 
-interface TokenDataResponse {
+export interface TokenDataResponse {
   price: number;
   liquidity: number;
   marketCap: number;

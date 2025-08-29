@@ -103,7 +103,7 @@ const Why = () => {
               </svg>
               <p className="font-bold text-xl mb-2">Secure &amp; Audited</p>
               <p className="text-[#aaa]">
-                Built on Solana's secure blockchain with community-driven
+                Built on Solana&apos;s secure blockchain with community-driven
                 governance and transparent operations.
               </p>
             </div>
@@ -135,7 +135,7 @@ const Why = () => {
               </svg>
               <p className="font-bold text-xl mb-2">Lightning Fast</p>
               <p className="text-[#aaa]">
-                Leveraging Solana's high-speed blockchain for instant
+                Leveraging Solana&apos;s high-speed blockchain for instant
                 transactions and low fees.
               </p>
             </div>

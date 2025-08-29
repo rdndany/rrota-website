@@ -93,6 +93,39 @@ export interface TokenDataResponse {
   priceChange24h: number;
 }
 
+// Default fallback data for when API fails and no cache exists
+const getDefaultTokenData = (): TokenDataResponse => ({
+  price: 0,
+  liquidity: 0,
+  marketCap: 0,
+  tokenSupply: 17400000000, // 17.4B tokens as mentioned in the description
+  holders: 0,
+  lastUpdated: Date.now(),
+  priceChange24h: 0,
+});
+
+// Retry function with exponential backoff
+const retryWithBackoff = async <T>(
+  fn: () => Promise<T>,
+  maxRetries: number = 3,
+  baseDelay: number = 1000
+): Promise<T> => {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (attempt === maxRetries - 1) {
+        throw error;
+      }
+
+      const delay = baseDelay * Math.pow(2, attempt);
+      console.log(`Attempt ${attempt + 1} failed, retrying in ${delay}ms...`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+  throw new Error("Max retries exceeded");
+};
+
 export async function getTokenData(
   tokenAddress: string
 ): Promise<TokenDataResponse> {
@@ -110,41 +143,53 @@ export async function getTokenData(
 
   try {
     console.log(`Fetching fresh data for token: ${tokenAddress}`);
-    const response = await fetch(apiUrl, {
-      headers: {
-        "x-api-key": apiKey,
-        "Content-Type": "application/json",
-      },
-    });
 
-    if (!response.ok) {
-      throw new Error(
-        `API request failed: ${response.status} ${response.statusText}`
+    const tokenData = await retryWithBackoff(async () => {
+      // Add timeout to prevent hanging requests
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+      const response = await fetch(apiUrl, {
+        headers: {
+          "x-api-key": apiKey,
+          "Content-Type": "application/json",
+        },
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error(
+          `API request failed: ${response.status} ${response.statusText}`
+        );
+      }
+
+      const data: TokenData = await response.json();
+
+      // Find the specific pool by poolId
+      const targetPoolId = "8fXPx6bqCne9Tg7apLBGJ3XJFjwkMU6se5NaFAenBkoF";
+      const targetPool = data.pools.find(
+        (pool) => pool.poolId === targetPoolId
       );
-    }
 
-    const data: TokenData = await response.json();
+      // Fallback to first pool if target pool not found
+      const primaryPool = targetPool || data.pools[0];
 
-    // Find the specific pool by poolId
-    const targetPoolId = "8fXPx6bqCne9Tg7apLBGJ3XJFjwkMU6se5NaFAenBkoF";
-    const targetPool = data.pools.find((pool) => pool.poolId === targetPoolId);
+      if (!primaryPool) {
+        throw new Error("No pool data found for this token");
+      }
 
-    // Fallback to first pool if target pool not found
-    const primaryPool = targetPool || data.pools[0];
-
-    if (!primaryPool) {
-      throw new Error("No pool data found for this token");
-    }
-
-    const tokenData: TokenDataResponse = {
-      price: primaryPool.price.usd,
-      liquidity: primaryPool.liquidity.usd,
-      marketCap: primaryPool.marketCap.usd,
-      tokenSupply: primaryPool.tokenSupply,
-      holders: data.holders,
-      lastUpdated: primaryPool.lastUpdated,
-      priceChange24h: data.events["24h"].priceChangePercentage,
-    };
+      return {
+        price: primaryPool.price.usd,
+        liquidity: primaryPool.liquidity.usd,
+        marketCap: primaryPool.marketCap.usd,
+        tokenSupply: primaryPool.tokenSupply,
+        holders: data.holders,
+        lastUpdated: primaryPool.lastUpdated,
+        priceChange24h: data.events["24h"].priceChangePercentage,
+      };
+    });
 
     // Cache the data
     setCachedData(tokenAddress, tokenData, now);
@@ -162,6 +207,15 @@ export async function getTokenData(
       return cachedEntry.data;
     }
 
-    throw new Error("Failed to fetch token data");
+    // If no cache exists, return default data instead of throwing
+    console.log(
+      `No cache available, returning default data for token: ${tokenAddress}`
+    );
+    const defaultData = getDefaultTokenData();
+
+    // Cache the default data so we don't keep hitting the API
+    setCachedData(tokenAddress, defaultData, now);
+
+    return defaultData;
   }
 }

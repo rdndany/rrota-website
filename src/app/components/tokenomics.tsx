@@ -86,6 +86,11 @@ const Tokenomics = () => {
         setError(null);
         const data = await getTokenData(TOKEN_ADDRESS);
         setTokenData(data);
+
+        // Check if we got default/fallback data (price = 0 and holders = 0)
+        if (data.price === 0 && data.holders === 0 && data.liquidity === 0) {
+          setError("Using default data - API temporarily unavailable");
+        }
       } catch (error) {
         console.error("Failed to fetch token data:", error);
         setError("Failed to load token data");
@@ -94,7 +99,7 @@ const Tokenomics = () => {
           price: 0,
           liquidity: 0,
           marketCap: 0,
-          tokenSupply: 20000000000, // Fallback to 20B tokens
+          tokenSupply: 17446373786, // 17.4B tokens as mentioned in description
           holders: 0,
           lastUpdated: Date.now(),
           priceChange24h: 0,

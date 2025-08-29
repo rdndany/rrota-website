@@ -71,11 +71,13 @@ const HowTo = () => {
               <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path>
               <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
             </svg>
-            <p className="font-bold text-xl mb-2">1 - Get Your Wallet Ready</p>
+            <p className="font-bold text-xl mb-2">
+              1 - Get Your Solana Wallet Ready
+            </p>
             <p className="text-[#aaa]">
-              Create and securely set up a Web3 wallet such as MetaMask or
-              Binance Wallet. This will allow you to participate in RROTA’s
-              presale and connect to the blockchain with full control.
+              Create and securely set up a Solana wallet such as Phantom,
+              Solflare, or Backpack. This will allow you to participate in RROTA
+              trading and connect to the Solana blockchain with full control.
             </p>
           </motion.div>
           <motion.div
@@ -99,13 +101,11 @@ const HowTo = () => {
               <polyline points="17 8 12 3 7 8"></polyline>
               <line x1="12" x2="12" y1="3" y2="15"></line>
             </svg>
-            <p className="font-bold text-xl mb-2">
-              2 - Upload Crypto to Your Wallet
-            </p>
+            <p className="font-bold text-xl mb-2">2 - Get SOL for Trading</p>
             <p className="text-[#aaa]">
-              Deposit your preferred crypto assets (BNB, USDT, or USDC ) into
-              your wallet. We recommend using the Binance Web3 Wallet for
-              optimal compatibility and ease of use.
+              Purchase SOL (Solana's native token) from exchanges like Coinbase,
+              Binance, or Kraken, then send it to your Solana wallet. You'll
+              need SOL to pay for transaction fees and trade RROTA tokens.
             </p>
           </motion.div>
           <motion.div
@@ -129,11 +129,12 @@ const HowTo = () => {
               <circle cx="19" cy="21" r="1"></circle>
               <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
             </svg>
-            <p className="font-bold text-xl mb-2">3 - Buy and Stake $SHIM</p>
+            <p className="font-bold text-xl mb-2">3 - Buy RROTA Tokens</p>
             <p className="text-[#aaa]">
-              Connect your wallet to the RROTA platform, purchase tokens during
-              the presale, and optionally stake them to start earning rewards
-              and become part of the growing RROTA ecosystem.
+              Connect your Solana wallet to DEXs like Raydium or Jupiter, search
+              for RROTA token using the contract address (3yeWY...xL1a), and
+              swap SOL for RROTA tokens to become part of the growing RROTA
+              ecosystem.
             </p>
           </motion.div>
         </motion.div>

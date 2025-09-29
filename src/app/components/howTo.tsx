@@ -84,8 +84,8 @@ const HowTo = () => {
               1 - Download Phantom Wallet
             </p>
             <p className="text-[#aaa] mb-4">
-              Get the official Phantom wallet for Solana. It's the most trusted
-              and user-friendly option.
+              Get the official Phantom wallet for Solana. It&apos;s the most
+              trusted and user-friendly option.
             </p>
             <a
               href="https://phantom.app/"

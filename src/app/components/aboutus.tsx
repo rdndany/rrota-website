@@ -17,8 +17,130 @@ const AboutUs = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          About Us
+          About RROTA
         </motion.h2>
+
+        {/* Quick Intro */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto">
+            <span className="text-[#20befa] font-bold">RROTA ($RTA)</span> is a
+            decentralized Solana token that combines real-world utility with fun
+            gamified rewards. From transit payments to play-to-earn gaming,{" "}
+            <span className="text-[#20befa] font-bold">RROTA</span> is built for
+            community growth and financial freedom.
+          </p>
+
+          {/* Key Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <motion.div
+              className="flex flex-col items-center p-6 rounded-xl border border-green-500/30 !bg-gradient-to-br !from-green-500/10 !to-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-green-400"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" />
+                  <path d="M3 5h18v6H3V5z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg text-white mb-2">
+                ✅ Audited & Safe
+              </h3>
+              <p className="text-green-400 text-sm font-medium">
+                FreshCoins Verified
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col items-center p-6 rounded-xl border border-blue-500/30 !bg-gradient-to-br !from-blue-500/10 !to-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-blue-400"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <path d="M9 9h.01" />
+                  <path d="M15 9h.01" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg text-white mb-2">
+                ⚙️ Utility + Fun
+              </h3>
+              <p className="text-blue-400 text-sm font-medium">
+                Games & Real Use Cases
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col items-center p-6 rounded-xl border border-orange-500/30 !bg-gradient-to-br !from-orange-500/10 !to-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-orange-400"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                  <path d="M17 3l3 3-3 3" />
+                  <path d="M7 21l-3-3 3-3" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg text-white mb-2">
+                🔥 1B+ Burned
+              </h3>
+              <p className="text-orange-400 text-sm font-medium">
+                Deflationary Supply
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
 
         <motion.div
           ref={ref}

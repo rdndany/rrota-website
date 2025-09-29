@@ -97,17 +97,57 @@ const Hero = () => {
     <div className="w-full !bg-transparent flex justify-center">
       <motion.section
         id="Hero"
-        className="relative w-full text-white py-[10px] mt-[50px] lg:mt-[100px]"
+        className="relative w-full text-white py-[10px] mt-[50px] lg:mt-[100px] overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
+        {/* Glowing spinning background logo */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <motion.div
+            className="relative"
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src={logo}
+              alt="RROTA Logo Background"
+              width={400}
+              height={400}
+              className="filter drop-shadow-2xl"
+              style={{
+                filter:
+                  "drop-shadow(0 0 20px rgba(28, 194, 252, 0.3)) drop-shadow(0 0 40px rgba(28, 194, 252, 0.2)) drop-shadow(0 0 80px rgba(28, 194, 252, 0.1))",
+              }}
+            />
+            {/* Additional glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1cc2fc]/20 via-transparent to-[#1cc2fc]/20 rounded-full blur-3xl scale-150"></div>
+          </motion.div>
+        </motion.div>
         <div
           className="
             container mx-auto px-4
             flex items-start
             overflow-hidden box-border
             max-[1100px]
+            relative z-10
           "
         >
           <div
@@ -129,8 +169,67 @@ const Hero = () => {
                   variants={itemVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  RROTA - Empowering the Future of Crypto
+                  💎 RROTA: The Wheel of REAL MONEY on Solana 💎
                 </motion.div>
+
+                {/* Primary CTAs */}
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4 mb-6"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                >
+                  <motion.a
+                    href="https://jup.ag/tokens/3yeWYPG3BvGBFrwjar9e28GBYZgYmHT79d7FBVS6xL1a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 px-8 py-4 !bg-gradient-to-r !from-[#1cc2fc] !to-[#0ea5e9] hover:!from-[#0ea5e9] hover:!to-[#1cc2fc] text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    Buy Now on Jupiter
+                  </motion.a>
+
+                  <motion.a
+                    href="https://t.me/rrotaOfficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 px-8 py-4 !bg-gradient-to-r !from-[#0088cc] !to-[#006699] hover:!from-[#006699] hover:!to-[#0088cc] text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m22 2-7 20-4-9-9-4Z" />
+                      <path d="M22 2 11 13" />
+                    </svg>
+                    Join Telegram
+                  </motion.a>
+                </motion.div>
+
                 <motion.h1
                   className="font-display text-[22px] md:text-[28px] font-bold text-white/90 leading-tight"
                   variants={itemVariants}

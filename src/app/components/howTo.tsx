@@ -43,10 +43,19 @@ const HowTo = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="relative inline-block">
-            <span className="relative z-10">How to Buy RROTA</span>
+            <span className="relative z-10">How to Buy (Simplified Guide)</span>
             <span className="absolute bottom-0 left-0 w-full h-2 bg-[#20befa] -z-0"></span>
           </span>
         </motion.h2>
+
+        <motion.p
+          className="text-center text-lg text-[#aaa] mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          👉 Purpose: Make buying easy, no confusion.
+        </motion.p>
         <motion.div
           className="grid md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -72,13 +81,35 @@ const HowTo = () => {
               <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
             </svg>
             <p className="font-bold text-xl mb-2">
-              1 - Get Your Solana Wallet Ready
+              1 - Download Phantom Wallet
             </p>
-            <p className="text-[#aaa]">
-              Create and securely set up a Solana wallet such as Phantom,
-              Solflare, or Backpack. This will allow you to participate in RROTA
-              trading and connect to the Solana blockchain with full control.
+            <p className="text-[#aaa] mb-4">
+              Get the official Phantom wallet for Solana. It's the most trusted
+              and user-friendly option.
             </p>
+            <a
+              href="https://phantom.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 relative z-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15,3 21,3 21,9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Download Phantom
+            </a>
           </motion.div>
           <motion.div
             className="p-8 rounded-2xl border border-[#2b3139] hover:border-cyan-500 transition-all duration-300 group relative overflow-hidden"
@@ -101,11 +132,10 @@ const HowTo = () => {
               <polyline points="17 8 12 3 7 8"></polyline>
               <line x1="12" x2="12" y1="3" y2="15"></line>
             </svg>
-            <p className="font-bold text-xl mb-2">2 - Get SOL for Trading</p>
+            <p className="font-bold text-xl mb-2">2 - Get SOL</p>
             <p className="text-[#aaa]">
-              Purchase SOL (Solana's native token) from exchanges like Coinbase,
-              Binance, or Kraken, then send it to your Solana wallet. You'll
-              need SOL to pay for transaction fees and trade RROTA tokens.
+              Buy SOL on Binance, Coinbase, or any major exchange. Send it to
+              your Phantom wallet. You need SOL to pay fees and buy RROTA.
             </p>
           </motion.div>
           <motion.div
@@ -129,13 +159,21 @@ const HowTo = () => {
               <circle cx="19" cy="21" r="1"></circle>
               <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
             </svg>
-            <p className="font-bold text-xl mb-2">3 - Buy RROTA Tokens</p>
-            <p className="text-[#aaa]">
-              Connect your Solana wallet to DEXs like Raydium or Jupiter, search
-              for RROTA token using the contract address (3yeWY...xL1a), and
-              swap SOL for RROTA tokens to become part of the growing RROTA
-              ecosystem.
+            <p className="font-bold text-xl mb-2">
+              3 - Swap SOL → $RTA on Jupiter
             </p>
+            <p className="text-[#aaa] mb-6">
+              Connect your wallet to Jupiter and swap SOL for RROTA tokens.
+              Jupiter finds the best rates automatically.
+            </p>
+            <a
+              href="https://jup.ag/tokens/3yeWYPG3BvGBFrwjar9e28GBYZgYmHT79d7FBVS6xL1a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit flex items-center justify-center gap-4 py-2 px-4 bg-gradient-to-r from-[#1cc2fc] to-[#0ea5e9] hover:from-[#0ea5e9] hover:to-[#1cc2fc] text-white font-bold text-xl rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(28,194,252,0.4)] active:scale-95 relative z-10 border-2 border-[#1cc2fc]/30 hover:border-[#1cc2fc]/60 animate-pulse"
+            >
+              Buy $RTA on Jupiter 🚀
+            </a>
           </motion.div>
         </motion.div>
       </motion.div>

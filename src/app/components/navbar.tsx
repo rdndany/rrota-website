@@ -110,19 +110,10 @@ const Navbar = () => {
         >
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <button
-              onClick={() => scrollToSection("top")}
+              onClick={() => scrollToSection("AboutUs")}
               className="relative px-3 py-2 rounded-lg hover:text-[#1cc2fc] transition-all duration-300 group"
             >
-              <span className="relative z-10">Home</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1cc2fc]/20 to-[#0ea5e9]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </motion.div>
-          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <button
-              onClick={() => scrollToSection("Tokenomics")}
-              className="relative px-3 py-2 rounded-lg hover:text-[#1cc2fc] transition-all duration-300 group"
-            >
-              <span className="relative z-10">Tokenomics</span>
+              <span className="relative z-10">About RROTA</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#1cc2fc]/20 to-[#0ea5e9]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </motion.div>
@@ -137,19 +128,19 @@ const Navbar = () => {
           </motion.div>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <button
-              onClick={() => window.open("/", "_blank")}
+              onClick={() => scrollToSection("Tokenomics")}
               className="relative px-3 py-2 rounded-lg hover:text-[#1cc2fc] transition-all duration-300 group"
             >
-              <span className="relative z-10">Whitepaper</span>
+              <span className="relative z-10">Tokenomics</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#1cc2fc]/20 to-[#0ea5e9]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </motion.div>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <button
-              onClick={() => scrollToSection("AboutUs")}
+              onClick={() => window.open("/", "_blank")}
               className="relative px-3 py-2 rounded-lg hover:text-[#1cc2fc] transition-all duration-300 group"
             >
-              <span className="relative z-10">About Us</span>
+              <span className="relative z-10">Whitepaper</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#1cc2fc]/20 to-[#0ea5e9]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </motion.div>

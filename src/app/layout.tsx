@@ -40,6 +40,28 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+  openGraph: {
+    title: "RROTA — The Wheel That Builds Portfolios",
+    description:
+      "RROTA = REAL MONEY. Built by the community, for the community. Be Early • Be Community • Be Real Money",
+    images: [
+      {
+        url: "/rrota-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RROTA Token - The Wheel That Builds Portfolios",
+      },
+    ],
+    type: "website",
+    siteName: "RROTA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RROTA — The Wheel That Builds Portfolios",
+    description:
+      "RROTA = REAL MONEY. Built by the community, for the community. Be Early • Be Community • Be Real Money",
+    images: ["/rrota-og.jpg"],
+  },
 };
 
 export default function RootLayout({

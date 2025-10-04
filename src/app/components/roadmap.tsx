@@ -1,32 +1,7 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
 
 const Roadmap = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
   const roadmapItems = [
     {
       title: "Phase 1 - Foundation",
@@ -81,21 +56,11 @@ const Roadmap = () => {
   return (
     <section id="Roadmap" className="text-white">
       <div className="container mx-auto px-4 lg:px-0">
-        <motion.h2
-          className="text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r pb-5 from-[#fff] via-[#fff] to-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(168,144,255,0.35)]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-        >
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r pb-5 from-[#fff] via-[#fff] to-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(168,144,255,0.35)]">
           RROTA Roadmap
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          className="max-w-4xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-gradient-to-br from-[#1a1d23] to-[#202329] border border-[#2b3139] rounded-2xl p-8">
             <p className="text-gray-300 leading-relaxed mb-4">
               RROTA&apos;s roadmap is built to guide the project from meme
@@ -129,28 +94,21 @@ const Roadmap = () => {
               across borders.
             </p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          ref={ref}
-          className="relative max-w-4xl mx-auto mt-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        <div className="relative max-w-4xl mx-auto mt-16">
           {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] !bg-gradient-to-b !from-[#2b3139] !via-[#20befa]/30 !to-[#2b3139] z-0"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {roadmapItems.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`relative ${
                   item.side === "left"
                     ? "md:pr-8 md:text-right"
                     : "md:pl-8 md:text-left"
                 } z-10`}
-                variants={itemVariants}
               >
                 {/* Timeline connector */}
 
@@ -223,10 +181,10 @@ const Roadmap = () => {
                     {item.status}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

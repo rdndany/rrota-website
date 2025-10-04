@@ -1,103 +1,28 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 
 const Why = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const cardsContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.4,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  };
-
   return (
     <section id="WhyRrota" className="max-w-7xl mx-auto px-4">
-      <motion.div
-        className="mt-10 space-y-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
-      >
+      <div className="mt-10 space-y-6">
         {/* Mini Promo / Hook */}
-        <motion.div className="text-center mb-12" variants={titleVariants}>
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold text-[#1cc2fc] mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1cc2fc] mb-4">
             💎 RROTA — The Wheel That Builds Portfolios
-          </motion.h1>
-          <motion.p
-            className="text-2xl md:text-3xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          </h1>
+          <p className="text-2xl md:text-3xl font-bold text-white mb-6">
             🚀 Be Early • Be Community • Be Real Money
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.h2
-          className="text-3xl font-bold text-center mb-8"
-          variants={titleVariants}
-        >
+        <h2 className="text-3xl font-bold text-center mb-8">
           <span className="relative inline-block">
             <span className="relative z-10">Why RROTA?</span>
-            <motion.span
-              className="absolute bottom-0 left-0 w-full h-2 bg-[#1cc2fc] -z-0"
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            />
+            <span className="absolute bottom-0 left-0 w-full h-2 bg-[#1cc2fc] -z-0" />
           </span>
-        </motion.h2>
+        </h2>
         {/* Audit & Security Section */}
-        <motion.div
-          className="mb-12 p-8 rounded-2xl border border-[#2b3139] !bg-gradient-to-br !from-[#1cc2fc]/10 !to-[#0ea5e9]/5 backdrop-blur-sm"
-          variants={cardVariants}
-        >
+        <div className="mb-12 p-8 rounded-2xl border border-[#2b3139] !bg-gradient-to-br !from-[#1cc2fc]/10 !to-[#0ea5e9]/5 backdrop-blur-sm">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-4">
               🔒 Security & Trust
@@ -109,10 +34,8 @@ const Why = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* FreshCoins Audit Badge */}
-            <motion.div
+            <div
               className="flex flex-col items-center p-6 rounded-xl border border-green-500/30 !bg-gradient-to-br !from-green-500/10 !to-transparent hover:border-green-400 transition-all duration-300 group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() =>
                 window.open("https://freshcoins.io/audit/rrota", "_blank")
               }
@@ -147,13 +70,10 @@ const Why = () => {
               <div className="mt-3 text-green-400 text-xs font-medium">
                 Click to view report →
               </div>
-            </motion.div>
+            </div>
 
             {/* No Mint Authority */}
-            <motion.div
-              className="flex flex-col items-center p-6 rounded-xl border border-red-500/30 !bg-gradient-to-br !from-red-500/10 !to-transparent"
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex flex-col items-center p-6 rounded-xl border border-red-500/30 !bg-gradient-to-br !from-red-500/10 !to-transparent">
               <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -180,13 +100,10 @@ const Why = () => {
               <p className="text-white/70 text-sm text-center">
                 Token supply is fixed - no new tokens can be created
               </p>
-            </motion.div>
+            </div>
 
             {/* LP Locked Forever */}
-            <motion.div
-              className="flex flex-col items-center p-6 rounded-xl border border-blue-500/30 !bg-gradient-to-br !from-blue-500/10 !to-transparent"
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex flex-col items-center p-6 rounded-xl border border-blue-500/30 !bg-gradient-to-br !from-blue-500/10 !to-transparent">
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -214,23 +131,12 @@ const Why = () => {
               <p className="text-white/70 text-sm text-center">
                 Liquidity pool is permanently locked for maximum security
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={cardsContainerVariants}
-        >
-          <motion.div
-            className="p-8 rounded-2xl border border-[#2b3139] hover:border-purple-500 transition-all duration-300 group relative overflow-hidden"
-            variants={cardVariants}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-          >
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="p-8 rounded-2xl border border-[#2b3139] hover:border-purple-500 transition-all duration-300 group relative overflow-hidden">
             <div className="absolute inset-0 !bg-gradient-to-br !from-purple-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <div className="relative z-20">
               <svg
@@ -254,16 +160,8 @@ const Why = () => {
                 governance and transparent operations.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-            className="p-8 rounded-2xl border border-[#2b3139] hover:border-yellow-500 transition-all duration-300 group relative overflow-hidden"
-            variants={cardVariants}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-          >
+          </div>
+          <div className="p-8 rounded-2xl border border-[#2b3139] hover:border-yellow-500 transition-all duration-300 group relative overflow-hidden">
             <div className="absolute inset-0 !bg-gradient-to-br !from-yellow-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <div className="relative z-20">
               <svg
@@ -286,16 +184,8 @@ const Why = () => {
                 transactions and low fees.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-            className="p-8 rounded-2xl border border-[#2b3139] hover:border-emerald-500 transition-all duration-300 group relative overflow-hidden"
-            variants={cardVariants}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-          >
+          </div>
+          <div className="p-8 rounded-2xl border border-[#2b3139] hover:border-emerald-500 transition-all duration-300 group relative overflow-hidden">
             <div className="absolute inset-0 !bg-gradient-to-br !from-emerald-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <div className="relative z-20">
               <svg
@@ -319,49 +209,26 @@ const Why = () => {
                 finance through active participation.
               </p>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Utility in Action Section */}
-        <motion.div className="mt-16" variants={cardVariants}>
-          <motion.h2
-            className="text-3xl font-bold text-center mb-8"
-            variants={titleVariants}
-          >
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-center mb-8">
             <span className="relative inline-block">
               <span className="relative z-10">🎮 Utility in Action</span>
-              <motion.span
-                className="absolute bottom-0 left-0 w-full h-2 bg-[#1cc2fc] -z-0"
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              />
+              <span className="absolute bottom-0 left-0 w-full h-2 bg-[#1cc2fc] -z-0" />
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            className="text-center text-white/70 mb-12 text-lg"
-            variants={titleVariants}
-          >
+          <p className="text-center text-white/70 mb-12 text-lg">
             Experience the real-world utility of RROTA tokens through
             interactive games and practical applications
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={cardsContainerVariants}
-          >
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Spin-to-Win Wheel */}
-            <motion.div
-              className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-purple-500 transition-all duration-300"
-              variants={cardVariants}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" },
-              }}
-            >
+            <div className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-purple-500 transition-all duration-300">
               <div className="absolute inset-0 !bg-gradient-to-br !from-purple-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
               {/* Placeholder */}
@@ -419,18 +286,10 @@ const Why = () => {
                   the bigger your potential rewards!
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Crypto Shooter Game */}
-            <motion.div
-              className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-orange-500 transition-all duration-300"
-              variants={cardVariants}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" },
-              }}
-            >
+            <div className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-orange-500 transition-all duration-300">
               <div className="absolute inset-0 !bg-gradient-to-br !from-orange-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
               {/* Placeholder */}
@@ -490,18 +349,10 @@ const Why = () => {
                   achievements. Higher scores = bigger rewards!
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Transit Payments */}
-            <motion.div
-              className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-green-500 transition-all duration-300"
-              variants={cardVariants}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" },
-              }}
-            >
+            <div className="group relative overflow-hidden rounded-2xl border border-[#2b3139] hover:border-green-500 transition-all duration-300">
               <div className="absolute inset-0 !bg-gradient-to-br !from-green-500/20 !to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
               {/* Placeholder */}
@@ -557,16 +408,12 @@ const Why = () => {
                   utility for everyday life!
                 </p>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Coming Soon CTA */}
-          <motion.div className="text-center mt-12" variants={cardVariants}>
-            <motion.button
-              className="inline-flex items-center gap-3 px-8 py-4 !bg-gradient-to-r !from-[#1cc2fc] !to-[#0ea5e9] hover:!from-[#0ea5e9] hover:!to-[#1cc2fc] text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+          <div className="text-center mt-12">
+            <button className="inline-flex items-center gap-3 px-8 py-4 !bg-gradient-to-r !from-[#1cc2fc] !to-[#0ea5e9] hover:!from-[#0ea5e9] hover:!to-[#1cc2fc] text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -583,10 +430,10 @@ const Why = () => {
                 <path d="M2 12l10 5 10-5" />
               </svg>
               Try RROTA Games → Coming Soon
-            </motion.button>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

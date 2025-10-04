@@ -11,6 +11,57 @@ body {
   overflow-x: hidden;
 }
 
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Ensure sections are visible on mobile - but exclude graph section */
+  section:not(#Graph) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Graph section should not have full viewport height */
+  #Graph {
+    min-height: auto;
+    display: block;
+  }
+
+  /* Graph section mobile optimizations */
+  #Graph {
+    padding: 8px 4px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #Graph .bg-\[#1a1d23\] {
+    background: linear-gradient(135deg, #1a1d23 0%, #202329 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  #Graph iframe {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: 300px !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile graph container improvements */
+  @media (max-width: 640px) {
+    #Graph h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    #Graph .bg-\[#1a1d23\] {
+      padding: 8px;
+      margin: 0 2px;
+    }
+  }
+}
+
 body::before {
   content: "";
   position: fixed;

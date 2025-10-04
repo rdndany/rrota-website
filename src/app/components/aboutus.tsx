@@ -1,32 +1,18 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
 import RrotaImage2 from "../../../public/rrota-image-2.jpg";
 import Image from "next/image";
 
 const AboutUs = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section id="AboutUs" className="w-full px-4 mb-20">
       <div className="max-w-[1300px] mx-auto">
-        <motion.h2
-          className="text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r pb-5 from-[#fff] via-[#fff] to-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(168,144,255,0.35)]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-        >
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold bg-gradient-to-r pb-5 from-[#fff] via-[#fff] to-[#fff] bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(168,144,255,0.35)]">
           About RROTA
-        </motion.h2>
+        </h2>
 
         {/* Quick Intro */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <div className="text-center mb-12">
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto">
             <span className="text-[#20befa] font-bold">RROTA ($RTA)</span> is a
             decentralized Solana token that combines real-world utility with fun
@@ -37,13 +23,7 @@ const AboutUs = () => {
 
           {/* Key Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <motion.div
-              className="flex flex-col items-center p-6 rounded-xl border border-green-500/30 !bg-gradient-to-br !from-green-500/10 !to-transparent"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex flex-col items-center p-6 rounded-xl border border-green-500/30 !bg-gradient-to-br !from-green-500/10 !to-transparent hover:scale-105 transition-transform duration-300">
               <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,15 +48,9 @@ const AboutUs = () => {
               <p className="text-green-400 text-sm font-medium">
                 FreshCoins Verified
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex flex-col items-center p-6 rounded-xl border border-blue-500/30 !bg-gradient-to-br !from-blue-500/10 !to-transparent"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex flex-col items-center p-6 rounded-xl border border-blue-500/30 !bg-gradient-to-br !from-blue-500/10 !to-transparent hover:scale-105 transition-transform duration-300">
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -103,15 +77,9 @@ const AboutUs = () => {
               <p className="text-blue-400 text-sm font-medium">
                 Games & Real Use Cases
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex flex-col items-center p-6 rounded-xl border border-orange-500/30 !bg-gradient-to-br !from-orange-500/10 !to-transparent"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex flex-col items-center p-6 rounded-xl border border-orange-500/30 !bg-gradient-to-br !from-orange-500/10 !to-transparent hover:scale-105 transition-transform duration-300">
               <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -138,17 +106,11 @@ const AboutUs = () => {
               <p className="text-orange-400 text-sm font-medium">
                 Deflationary Supply
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          ref={ref}
-          className="w-full bg-[#1c1f24] border border-[#2b3139] rounded-[24px] overflow-hidden"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <div className="w-full bg-[#1c1f24] border border-[#2b3139] rounded-[24px] overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative w-full h-[300px] sm:h-[400px] md:h-full">
               <Image
@@ -331,7 +293,7 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

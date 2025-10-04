@@ -167,7 +167,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <a
-            href="#"
+            href="https://github.com/beskU/rrota/blob/d094f58cfde725493bd2eba708d438ad2a6f76a2/RROTA%20%24RTA%20WHITEPAPER.pdf"
             className="text-[#aaa] hover:text-[#1cc2fc] transition-colors duration-300 text-sm"
           >
             Whitepaper
